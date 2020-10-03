@@ -8,7 +8,7 @@ flutter pub get
 <!-- 在浏览器运行 -->
 flutter run -d chrom
 
-<!-- 在设置上运行 -->
+<!-- 在设备上运行 -->
 flutter run
 ```
 
