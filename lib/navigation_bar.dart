@@ -53,23 +53,23 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.looks_one),
-          title: Text('菜单一'),
+          label: '菜单一',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.looks_two),
-          title: Text('菜单二'),
+          label: '菜单二',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.looks_3),
-          title: Text('菜单三'),
+          label: '菜单三',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.looks_4),
-          title: Text('菜单四'),
+          label: '菜单四',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.looks_5),
-          title: Text('菜单五'),
+          label: '菜单五',
         ),
       ],
       currentIndex: _currentIndex,
