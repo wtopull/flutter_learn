@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'navigation_bar.dart';
 import 'package:hello_demo/utils/routers.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+  //设置状态栏透明
+  SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
+    statusBarIconBrightness: Brightness.dark,
+    statusBarColor: Colors.transparent,
+  );
+  SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+}
 
 class MyApp extends StatelessWidget {
   Map<String, WidgetBuilder> _buildRoutes() {
