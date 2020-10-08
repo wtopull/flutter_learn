@@ -67,7 +67,7 @@ class _ContainerPagesState extends State<ContainerPages> {
                   color: Colors.pink[400],
                 ),
                 child: Text(
-                  "设置子控件的背景颜色、形状等。背景颜色只能在 decoration 里面设置",
+                  "decoration:设置子控件的背景颜色、形状等。背景颜色只能在 decoration 里面设置",
                   style: TextStyle(fontSize: 12, color: Colors.black),
                 ),
               ),
@@ -100,21 +100,6 @@ class _ContainerPagesState extends State<ContainerPages> {
             child: Text("宽度最大", style: TextStyle(color: Colors.red)),
           ),
           Container(
-            width: 200.0,
-            height: 200.0,
-            alignment: Alignment.center,
-            margin: EdgeInsets.only(top: 15.0, bottom: 15.0),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: ExactAssetImage("images/21.jpg"),
-                fit: BoxFit.contain,
-              ),
-              border: Border.all(width: 2.0, color: Colors.pink[400]),
-              shape: BoxShape.circle,
-            ),
-            child: Text("背景图片", style: TextStyle(color: Colors.black)),
-          ),
-          Container(
             width: 150.0,
             height: 150.0,
             alignment: Alignment.center,
@@ -143,7 +128,7 @@ class _ContainerPagesState extends State<ContainerPages> {
               shape: BoxShape.circle,
             ),
             child: Text("背景图片旋转", style: TextStyle(color: Colors.black)),
-            transform: Matrix4.rotationZ(-0.6),
+            transform: Matrix4.rotationZ(-0.2),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -161,10 +146,76 @@ class _ContainerPagesState extends State<ContainerPages> {
             ],
           ),
           Text(
-              "源码解析:Container({Key key, double width, double height, BoxConstraints constraints, Color color, Decoration decoration})"),
+            "继承关系:",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
+          ),
+          Text(
+              "Object > Diagnosticable > DiagnosticableTree > Widget > StatelessWidget > Container"),
+          Text(
+            "源码解析:",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
+          ),
+          Text("Key key"),
           Text(""),
           Text(
-              "源码解析:Container({this.foregroundDecoration, this.alignment, this.padding, this.margin, this.transform, this.child})"),
+            "double width",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "double height",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "BoxConstraints constraints",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "Color color",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "Decoration decoration",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "this.foregroundDecoration",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "this.alignment",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "this.padding",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "this.margin",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "this.transform",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "this.child",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
+          Text(""),
+          Text(
+            "",
+            style: TextStyle(color: Colors.pink[400]),
+          ),
         ],
       ),
     );
