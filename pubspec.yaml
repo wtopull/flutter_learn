@@ -24,6 +24,7 @@ flutter:
 
   assets:
     - images/
+    - assets/page_images/
     - assets/Container.md
 
   # example:
