@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../RaisedButton/post.dart';
 
 class FlatButtonPages extends StatefulWidget {
   static const String routeName = '/flatButton';
@@ -11,35 +12,57 @@ class _FlatButtonPagesState extends State<FlatButtonPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("FlatButton")),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: <Widget>[
-          Text("FlatButton跟RaisedButton用法基本一致"),
-          FlatButton(
-            onPressed: () {},
-            child: Text("浮动按钮"),
-            textColor: Colors.white,
-            color: Colors.blue,
-            shape: RoundedRectangleBorder(
-              side: BorderSide(
-                color: Colors.red,
-                width: 1,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("FlatButton跟RaisedButton用法基本一致"),
+              FlatButton(
+                onPressed: () {},
+                child: Text("浮动按钮"),
+                textColor: Colors.white,
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    color: Colors.red,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
-              borderRadius: BorderRadius.circular(8),
-            ),
+              Text(""),
+            ],
           ),
-          Text(""),
-          Text(
-            "继承关系:",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
+          DataTable(
+            columns: [
+              DataColumn(label: Text('属性')),
+              DataColumn(label: Text('介绍'))
+            ],
+            rows: posts.map((post) {
+              return DataRow(
+                cells: [
+                  DataCell(
+                    Container(
+                      width: 100,
+                      child: Text(post.title),
+                    ),
+                  ),
+                  DataCell(
+                    Container(
+                      width: 230,
+                      child: SelectableText(
+                        post.con,
+                        autofocus: true,
+                        scrollPhysics: ClampingScrollPhysics(),
+                        toolbarOptions: ToolbarOptions(copy: true),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            }).toList(),
           ),
-          Text("继承自MaterialButton"),
-          Text(""),
-          Text(
-            "常用属性：",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
-          ),
-          Image.asset('assets/page_images/RaisedButton.png'),
         ],
       ),
     );

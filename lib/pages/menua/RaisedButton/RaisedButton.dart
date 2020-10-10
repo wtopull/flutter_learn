@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './post.dart';
 
 class RaisedButtonPages extends StatefulWidget {
   static const String routeName = '/raisedButton';
@@ -11,62 +12,84 @@ class _RaisedButtonPagesState extends State<RaisedButtonPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("RaisedButton")),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: <Widget>[
-          Text("onPressed为null时，按钮是禁用状态的"),
-          RaisedButton(
-            onPressed: null,
-            child: Text('Button'),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("onPressed为null时，按钮是禁用状态的"),
+              RaisedButton(
+                onPressed: null,
+                child: Text('Button'),
+              ),
+              Text("禁用时样式设置"),
+              RaisedButton(
+                onPressed: null,
+                child: Text('Button'),
+                disabledColor: Colors.grey[350],
+                disabledTextColor: Colors.white,
+              ),
+              Text("设置背景色，文字颜色，阴影，padding"),
+              RaisedButton(
+                onPressed: () {},
+                child: Text('Button'),
+                textColor: Colors.white,
+                color: Colors.blue,
+                padding: EdgeInsets.all(20),
+                elevation: 5,
+              ),
+              Text("设置带斜角的长方形边框"),
+              RaisedButton(
+                onPressed: () {},
+                child: Text('Button'),
+                textColor: Colors.white,
+                color: Colors.blue,
+                shape: BeveledRectangleBorder(
+                    side: BorderSide(
+                      color: Colors.red,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+              ),
+              Text("设置两端是半圆的边框"),
+              RaisedButton(
+                onPressed: () {},
+                child: Text('Button'),
+                textColor: Colors.white,
+                color: Colors.blue,
+                shape: StadiumBorder(),
+              ),
+              Text(""),
+            ],
           ),
-          Text("禁用时样式设置"),
-          RaisedButton(
-            onPressed: null,
-            child: Text('Button'),
-            disabledColor: Colors.grey[350],
-            disabledTextColor: Colors.white,
+          DataTable(
+            columns: [
+              DataColumn(label: Text('属性')),
+              DataColumn(label: Text('介绍'))
+            ],
+            rows: posts.map((post) {
+              return DataRow(
+                cells: [
+                  DataCell(
+                    Container(
+                      width: 100,
+                      child: Text(post.title),
+                    ),
+                  ),
+                  DataCell(
+                    Container(
+                      width: 230,
+                      child: SelectableText(
+                        post.con,
+                        autofocus: true,
+                        scrollPhysics: ClampingScrollPhysics(),
+                        toolbarOptions: ToolbarOptions(copy: true),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            }).toList(),
           ),
-          Text("设置背景色，文字颜色，阴影，padding"),
-          RaisedButton(
-            onPressed: () {},
-            child: Text('Button'),
-            textColor: Colors.white,
-            color: Colors.blue,
-            padding: EdgeInsets.all(20),
-            elevation: 5,
-          ),
-          Text("设置带斜角的长方形边框"),
-          RaisedButton(
-            onPressed: () {},
-            child: Text('Button'),
-            textColor: Colors.white,
-            color: Colors.blue,
-            shape: BeveledRectangleBorder(
-                side: BorderSide(
-                  color: Colors.red,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(10))),
-          ),
-          Text("设置两端是半圆的边框"),
-          RaisedButton(
-            onPressed: () {},
-            child: Text('Button'),
-            textColor: Colors.white,
-            color: Colors.blue,
-            shape: StadiumBorder(),
-          ),
-          Text(""),
-          Text(
-            "继承关系:",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
-          ),
-          Text("继承自MaterialButton"),
-          Text(""),
-          Text(
-            "常用属性：",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
-          ),
-          Image.asset('assets/page_images/RaisedButton.png'),
         ],
       ),
     );
