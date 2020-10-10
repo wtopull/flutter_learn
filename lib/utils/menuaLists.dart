@@ -97,7 +97,7 @@ List<Map> menuaLists = [
         "alias": "当菜单隐藏式，点击或调用onSelected时显示一个弹出式菜单列表",
         "path": "/popupMenuButton"
       },
-      {"name": "ButtonBar", "alias": "水平排列的按钮组", "path": "/buttonBar"}
+      {"name": "ButtonBar", "alias": "是一个放置和水平排列按钮的一个组件", "path": "/buttonBar"}
     ]
   },
   {

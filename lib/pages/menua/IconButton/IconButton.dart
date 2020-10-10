@@ -11,7 +11,27 @@ class _IconButtonPagesState extends State<IconButtonPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("IconButton")),
-      body: Center(child: Text("IconButton")),
+      body: Center(
+        child: ListView(
+          children: [
+            IconButton(
+              icon: Icon(Icons.description),
+              onPressed: () {
+                print('点击了icon');
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.add,
+                color: Colors.redAccent,
+              ),
+              onPressed: () {
+                print('点击了icon');
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
