@@ -11,7 +11,10 @@ class _CenterPagesState extends State<CenterPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Center")),
-      body: Center(child: Text("Center")),
+      body: Center(
+        child: Container(
+            width: 100, height: 100, color: Colors.blue, child: Text("盒子是居中的")),
+      ),
     );
   }
 }

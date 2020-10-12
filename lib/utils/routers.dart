@@ -411,6 +411,12 @@ List<BgAllPages> _buildBgAllPages() {
       buildRoute: (BuildContext context) => TablePages(),
     ),
     BgAllPages(
+      name: 'Wrap',
+      alias: '为其子widget使用表格布局算法的widget',
+      routeName: WrapPages.routeName,
+      buildRoute: (BuildContext context) => WrapPages(),
+    ),
+    BgAllPages(
       name: 'ListBody',
       alias: '它沿着一个给定的轴，顺序排列它的子元素',
       routeName: ListBodyPages.routeName,

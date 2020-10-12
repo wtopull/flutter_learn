@@ -7,16 +7,18 @@ class SnackBarPages extends StatefulWidget {
 }
 
 class _SnackBarPagesState extends State<SnackBarPages> {
+  var _scaffoldkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldkey,
       appBar: AppBar(title: Text("SnackBar")),
       body: Column(
         children: <Widget>[
           RaisedButton(
             child: Text('showSnackBar'),
             onPressed: () {
-              Scaffold.of(context).showSnackBar(
+              _scaffoldkey.currentState.showSnackBar(
                 SnackBar(
                   content: Text('好消息，好消息，一块钱三样，随便选，随便挑。'),
                 ),
@@ -26,7 +28,7 @@ class _SnackBarPagesState extends State<SnackBarPages> {
           RaisedButton(
             child: Text('自动关闭'),
             onPressed: () {
-              Scaffold.of(context).showSnackBar(
+              _scaffoldkey.currentState.showSnackBar(
                 SnackBar(
                   content: Row(
                     children: <Widget>[
@@ -42,7 +44,7 @@ class _SnackBarPagesState extends State<SnackBarPages> {
           RaisedButton(
             child: Text('带按钮'),
             onPressed: () {
-              Scaffold.of(context).showSnackBar(
+              _scaffoldkey.currentState.showSnackBar(
                 SnackBar(
                   action: SnackBarAction(
                     label: '确定',
@@ -67,7 +69,7 @@ class _SnackBarPagesState extends State<SnackBarPages> {
   }
 
   _showSnackBar(BuildContext context) {
-    Scaffold.of(context).showSnackBar(
+    _scaffoldkey.currentState.showSnackBar(
       SnackBar(
         content: Text('showSnackBar'),
         backgroundColor: Colors.black54,

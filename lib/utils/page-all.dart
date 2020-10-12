@@ -77,6 +77,7 @@ export 'package:hello_demo/pages/menua/Stack/Stack.dart';
 export 'package:hello_demo/pages/menua/IndexedStack/IndexedStack.dart';
 export 'package:hello_demo/pages/menua/Flow/Flow.dart';
 export 'package:hello_demo/pages/menua/Table/Table.dart';
+export 'package:hello_demo/pages/menua/Wrap/Wrap.dart';
 export 'package:hello_demo/pages/menua/ListBody/ListBody.dart';
 export 'package:hello_demo/pages/menua/LayoutBuilder/LayoutBuilder.dart';
 export 'package:hello_demo/pages/menua/CustomMultiChildLayout/CustomMultiChildLayout.dart';

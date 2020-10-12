@@ -4,4 +4,6 @@ class Post {
   final String con;
 }
 
-final List<Post> posts = [];
+final List<Post> posts = [
+  Post(title: "", con: ""),
+];
