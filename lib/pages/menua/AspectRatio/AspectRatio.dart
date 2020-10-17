@@ -11,7 +11,16 @@ class _AspectRatioPagesState extends State<AspectRatioPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("AspectRatio")),
-      body: Center(child: Text("AspectRatio")),
+      body: new Container(
+        height: 200.0,
+        child: new AspectRatio(
+          aspectRatio: 2 / 1,
+          child: new Container(
+            color: Colors.red,
+            child: Text("400*200，宽是高的2倍"),
+          ),
+        ),
+      ),
     );
   }
 }

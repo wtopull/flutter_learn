@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './DemoFlowMenu.dart';
+import './DemoFlowPopMenu.dart';
 
 class FlowPages extends StatefulWidget {
   static const String routeName = '/flow';
@@ -11,7 +13,17 @@ class _FlowPagesState extends State<FlowPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Flow")),
-      body: Center(child: Text("Flow")),
+      body: Container(
+        height: double.infinity,
+        color: Colors.grey[300],
+        child: ListView(
+          children: [
+            Text("data"),
+            DemoFlowMenu(),
+            DemoFlowPopMenu(),
+          ],
+        ),
+      ),
     );
   }
 }

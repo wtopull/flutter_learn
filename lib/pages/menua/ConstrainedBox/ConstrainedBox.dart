@@ -11,7 +11,20 @@ class _ConstrainedBoxPagesState extends State<ConstrainedBoxPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("ConstrainedBox")),
-      body: Center(child: Text("ConstrainedBox")),
+      body: ConstrainedBox(
+        constraints: BoxConstraints(
+          minWidth: 150.0,
+          minHeight: 50.0,
+        ),
+        child: Container(
+          height: 5.0,
+          child: redBox,
+        ),
+      ),
     );
   }
+
+  Widget redBox = DecoratedBox(
+    decoration: BoxDecoration(color: Colors.red),
+  );
 }
