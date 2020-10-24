@@ -13,7 +13,11 @@ class _CustomSingleChildLayoutPagesState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("CustomSingleChildLayout")),
-      body: Center(child: Text("CustomSingleChildLayout")),
+      body: ListView(
+        children: <Widget>[
+          Text("CustomSingleChildLayout"),
+        ],
+      ),
     );
   }
 }
